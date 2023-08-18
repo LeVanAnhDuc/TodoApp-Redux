@@ -16,8 +16,11 @@ const rootReducer = ( state=initState, action ) =>{
                     action.payload
                 ]
         case 'todoList/toggleTodo':
-            return state.map(todo => todo.id === action.payload ? 
-                {...todo, completed: !todo.completed} : todo)
+            return state.map(
+                    todo => todo.id === action.payload ? 
+                    {...todo, completed: !todo.completed} 
+                    : todo
+                )
         default:
             return state
     }
