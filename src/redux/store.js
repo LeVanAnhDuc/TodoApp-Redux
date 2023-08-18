@@ -1,6 +1,14 @@
-import { legacy_createStore as createStore } from 'redux';
-import rootReducer from './reducer'
 
-const store = createStore(rootReducer);
+// redux toolket 
+import { configureStore } from'@reduxjs/toolkit'
+import FilterSlice from "../components/Filters/filterSlice";
+import TodoListSlice from '../components/TodoList/todoListSlice'
 
-export default store;
+const store = configureStore ({
+    reducer:{
+        filters: FilterSlice.reducer,
+        todoList: TodoListSlice.reducer,
+    },
+})
+
+export default store
